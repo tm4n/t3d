@@ -1,3 +1,9 @@
+# Folders
+libs/
+t3d-example/Debug/
+t3d-example/Release/
+
+
 # Compiled Object files
 *.slo
 *.lo
@@ -26,3 +32,10 @@
 *.exe
 *.out
 *.app
+
+# Visual studio stuff
+*.sdf
+*.opensdf
+*.suo
+*.vcxproj.filters
+*.vcxproj.user

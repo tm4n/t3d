@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{383B5D98-1D64-4181-B8BB-6D7047E74BDB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>t3dexample</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)\..\;$(ProjectDir)\..\libs\glm;$(ProjectDir)\..\libs\SDL2\include;$(ProjectDir)\..\libs\SDL2_mixer\include;$(ProjectDir)\..\libs\SDL2_ttf-2.0.12\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\..\libs\SDL2\lib\x86;$(ProjectDir)\..\libs\SDL2_mixer\lib\x86;$(ProjectDir)\..\libs\SDL2_ttf-2.0.12\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)\..\;$(ProjectDir)\..\libs\glm;$(ProjectDir)\..\libs\SDL2\include;$(ProjectDir)\..\libs\SDL2_mixer\include;$(ProjectDir)\..\libs\SDL2_ttf-2.0.12\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\..\libs\SDL2\lib\x86;$(ProjectDir)\..\libs\SDL2_mixer\lib\x86;$(ProjectDir)\..\libs\SDL2_ttf-2.0.12\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sdl2.lib;opengl32.lib;SDL2_mixer.lib;sdl2_ttf.lib;Ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>sdl2.lib;opengl32.lib;SDL2_mixer.lib;sdl2_ttf.lib;Ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\CubeTexture.cpp" />
+    <ClCompile Include="..\gameRenderer.cpp" />
+    <ClCompile Include="..\gl_core_2_1.c" />
+    <ClCompile Include="..\GUI.cpp" />
+    <ClCompile Include="..\GUIObject.cpp" />
+    <ClCompile Include="..\Mesh.cpp" />
+    <ClCompile Include="..\MeshBlend.cpp" />
+    <ClCompile Include="..\MeshGUI.cpp" />
+    <ClCompile Include="..\MeshSkybox.cpp" />
+    <ClCompile Include="..\MeshTerrain.cpp" />
+    <ClCompile Include="..\particlemgr.cpp" />
+    <ClCompile Include="..\RenderObject.cpp" />
+    <ClCompile Include="..\Sound.cpp" />
+    <ClCompile Include="..\Texture.cpp" />
+    <ClCompile Include="..\Timer.cpp" />
+    <ClCompile Include="..\vec.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\CubeTexture.h" />
+    <ClInclude Include="..\defs.h" />
+    <ClInclude Include="..\flist.h" />
+    <ClInclude Include="..\gameRenderer.h" />
+    <ClInclude Include="..\gl_core_2_1.h" />
+    <ClInclude Include="..\GUI.h" />
+    <ClInclude Include="..\GUIObject.h" />
+    <ClInclude Include="..\Mesh.h" />
+    <ClInclude Include="..\MeshBlend.h" />
+    <ClInclude Include="..\MeshGUI.h" />
+    <ClInclude Include="..\MeshSkybox.h" />
+    <ClInclude Include="..\MeshTerrain.h" />
+    <ClInclude Include="..\particlemgr.h" />
+    <ClInclude Include="..\RenderObject.h" />
+    <ClInclude Include="..\Sound.h" />
+    <ClInclude Include="..\Texture.h" />
+    <ClInclude Include="..\Timer.h" />
+    <ClInclude Include="..\vec.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
